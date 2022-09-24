@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
 import static com.dis.bot.mensagensdocorvo.tool.EventOptionNameGetter.getEventOption;
+import static com.dis.bot.mensagensdocorvo.tool.MemberIdGetter.getMemberId;
 import static com.dis.bot.mensagensdocorvo.tool.MemberNameGetter.getUsername;
 
 @Component
@@ -24,10 +25,12 @@ public class StartCommand implements SlashCommand {
 
     @Override
     public Mono<Void> handle(ChatInputInteractionEvent event) {
-        String memberName = getUsername(event);
+        String memberId = getMemberId(event);
+        String memberNickName = getUsername(event);
+
         String playerName = getEventOption(event, "name");
 
-        progressService.start(memberName, playerName);
+        progressService.start(memberId, memberNickName, playerName);
 
         return  event.reply()
             .withEphemeral(false)

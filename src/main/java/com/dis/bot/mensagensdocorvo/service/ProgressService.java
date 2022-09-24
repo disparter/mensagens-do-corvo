@@ -16,13 +16,19 @@ public class ProgressService {
         this.repository = repository;
     }
 
-    public void start(String memberName, String playerName) {
+    public void start(String memberId, String memberUserName, String playerName) {
         repository.save(Progress.builder()
                         .id(UUID.randomUUID().toString())
+                        .memberId(memberId)
                         .characterName(playerName)
-                        .playerNickName(memberName)
+                        .memberUserName(memberUserName)
                         .path("default")
+                        .active(true)
                         .level(0)
                 .build());
+    }
+
+    public Progress get(String memberId){
+        return repository.findByMemberId(memberId);
     }
 }

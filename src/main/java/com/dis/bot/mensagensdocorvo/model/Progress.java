@@ -12,7 +12,10 @@ public class Progress {
 
     @Id
     private String id;
-    private String playerNickName;
+    private Boolean active;
+
+    private String memberId;
+    private String memberUserName;
     private String characterName;
     private Integer level;
     private String path;
