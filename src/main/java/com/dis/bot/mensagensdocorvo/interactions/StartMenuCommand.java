@@ -8,6 +8,7 @@ import discord4j.core.event.domain.interaction.SelectMenuInteractionEvent;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
+import static com.dis.bot.mensagensdocorvo.scenes.StartScene.FIRST_ENCOUNTER;
 import static com.dis.bot.mensagensdocorvo.tool.EventOptionNameGetter.getEventOption;
 import static com.dis.bot.mensagensdocorvo.tool.MemberIdGetter.getMemberId;
 import static com.dis.bot.mensagensdocorvo.tool.MemberNameGetter.getUsername;
@@ -27,7 +28,7 @@ public class StartMenuCommand implements MenuCommand {
 
     @Override
     public String getName() {
-        return "firstEncounter";
+        return FIRST_ENCOUNTER;
     }
 
     @Override
