@@ -18,15 +18,15 @@ services:
       - SPRING_DATA_MONGODB_DATABASE=${MONGO_DB}
       - SPRING_DATA_MONGODB_URI=${MONGO_DB_URL}
     depends_on:
-      - mongo
+      - mongodb
     networks:
-      - mongo-compose-network
+      - mongodb-compose-network
 
-  mongo:
+  mongodb:
     image: mongo:5.0
     networks:
-      - mongo-compose-network
-    container_name: mongo
+      - mongodb-compose-network
+    container_name: mongodb
     restart: unless-stopped
     ports:
       - "27017:27017"
@@ -44,9 +44,9 @@ services:
       - $MONGO_INITDB_SCRIPTS_HOST_PATH:/docker-entrypoint-initdb.d/
     command: [ "--bind_ip", "0.0.0.0" ]
 
-  mongo-express:
+  mongodb-express:
     image: mongo-express
-    container_name: mongo-express
+    container_name: mongodb-express
     env_file:
       - .env
     ports:
@@ -54,13 +54,13 @@ services:
     environment:
         - ME_CONFIG_MONGODB_URL=${MONGO_DB_URL}
     networks:
-      - mongo-compose-network
+      - mongodb-compose-network
     depends_on:
-      - mongo
+      - mongodb
     volumes:
       - /var/mongo/data:/data/db
 
 
 networks:
-  mongo-compose-network:
+  mongodb-compose-network:
     driver: bridge
