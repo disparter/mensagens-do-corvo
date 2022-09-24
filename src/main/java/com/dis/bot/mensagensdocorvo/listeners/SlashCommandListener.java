@@ -1,8 +1,8 @@
-package com.dis.bot.listeners;
+package com.dis.bot.mensagensdocorvo.listeners;
 
-import com.dis.bot.commands.SlashCommand;
-import com.dis.bot.exception.GenericException;
-import com.dis.bot.exception.InvalidChoiceException;
+import com.dis.bot.mensagensdocorvo.commands.SlashCommand;
+import com.dis.bot.mensagensdocorvo.exception.GenericException;
+import com.dis.bot.mensagensdocorvo.exception.InvalidChoiceException;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.interaction.ChatInputInteractionEvent;
 import org.springframework.stereotype.Component;

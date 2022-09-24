@@ -1,4 +1,4 @@
-package com.dis.bot.exception;
+package com.dis.bot.mensagensdocorvo.exception;
 
 public class InvalidChoiceException extends RuntimeException {
     private final static String MESSAGE = "Invalid choice";

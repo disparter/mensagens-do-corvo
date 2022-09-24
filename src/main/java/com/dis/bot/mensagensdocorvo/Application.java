@@ -1,4 +1,4 @@
-package com.dis.bot;
+package com.dis.bot.mensagensdocorvo;
 
 import discord4j.core.DiscordClientBuilder;
 import discord4j.core.GatewayDiscordClient;

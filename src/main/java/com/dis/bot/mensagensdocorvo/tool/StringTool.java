@@ -1,4 +1,4 @@
-package com.dis.bot.tool;
+package com.dis.bot.mensagensdocorvo.tool;
 
 public class StringTool {
 

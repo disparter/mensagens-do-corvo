@@ -1,4 +1,4 @@
-package com.dis.bot.exception;
+package com.dis.bot.mensagensdocorvo.exception;
 
 public class GenericException extends RuntimeException {
     public GenericException(String message) {
