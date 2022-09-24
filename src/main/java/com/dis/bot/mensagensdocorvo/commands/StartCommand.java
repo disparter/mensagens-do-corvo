@@ -37,14 +37,15 @@ public class StartCommand implements SlashCommand {
 
         progressService.start(memberId, memberNickName, playerName);
 
+        event.createFollowup("Enquanto caminhava pela estrada pode perceber um arrepio irradiando por todo seu corpo").subscribe();
+        event.createFollowup(" o arrepio que começou dos pés a cabeça, escurece sua visão enquanto a sensação do seu mundo").subscribe();
+        event.createFollowup(" se vai com todas a sua capacidade sensorial").subscribe();
+        event.createFollowup(" após algum momento em escuridão total o arrepio desce da cabeça aos pés").subscribe();
+        event.createFollowup(" e sua percepção retorna da mesma maneira lhe entregando a visão de um velho sujo em roupas rasgadas").subscribe();
+
         return  event.reply()
             .withComponents(startScene.getMenuForFirstEncounter())
-            .withEphemeral(false)
-            .withContent("Equanto caminhava pela estrada pode perceber um arrepio irradiando por todo seu corpo")
-            .withContent(" o arrepio que começou dos pés a cabeça, escurece sua visão enquanto a sensação do seu mundo")
-            .withContent(" se vai com todas a sua capacidade sensorial")
-            .withContent(" após algum momento em escuridão total o arrepio desce da cabeça aos pés")
-            .withContent(" e sua percepção retorna da mesma maneira lhe entregando a visão de um velho sujo em roupas rasgadas");
+            .withEphemeral(false);
 
     }
 }
